@@ -1,0 +1,441 @@
+[
+  {
+    "id": 9,
+    "slug": "local-llms-on-laptops",
+    "title": "Running local LLMs on a laptop",
+    "excerpt": "Small quantized models now run offline on modest hardware. Here is what actually works.",
+    "category": "Technology",
+    "tags": ["ai", "llm", "local"],
+    "author": "Daniel Ortiz",
+    "date": "2026-10-14",
+    "updated": null,
+    "read": 7,
+    "img": "local-llms-on-laptops",
+    "caption": "Cover photo via Picsum placeholder",
+    "featured": true,
+    "body": [
+      {
+        "t": "p",
+        "x": "A year ago, running a capable language model locally meant a workstation. Today, **4-bit quantized** models of 7 to 8 billion parameters run comfortably on 16 GB of RAM."
+      },
+      {
+        "t": "h2",
+        "x": "Pick the right format"
+      },
+      {
+        "t": "p",
+        "x": "GGUF files load in llama.cpp and its many frontends. Look for *Q4_K_M* quantization as a good balance between size and quality."
+      },
+      {
+        "t": "ul",
+        "items": [
+          "Start with a 7B model at Q4",
+          "Keep context under 8k tokens",
+          "Test on your actual machine before relying on it"
+        ]
+      },
+      {
+        "t": "h3",
+        "x": "A minimal load command"
+      },
+      {
+        "t": "code",
+        "x": "llama-cli -m model.Q4_K_M.gguf \\\n  -p \"Explain vector search\" \\\n  -n 256"
+      },
+      {
+        "t": "blockquote",
+        "x": "Local models trade raw capability for privacy and zero latency."
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "slug": "prompt-engineering-that-scales",
+    "title": "Prompt engineering that survives production",
+    "excerpt": "Prompts are code. Treat them with versioning, tests and clear contracts.",
+    "category": "Technology",
+    "tags": ["ai", "prompts", "engineering"],
+    "author": "Maya Rahman",
+    "date": "2026-10-10",
+    "updated": "2026-10-11",
+    "read": 6,
+    "img": "prompt-engineering-that-scales",
+    "caption": "Cover photo via Picsum placeholder",
+    "featured": false,
+    "body": [
+      {
+        "t": "p",
+        "x": "The demo prompt that impressed everyone in a meeting is rarely the prompt that survives real users. Production prompts need **structure**."
+      },
+      {
+        "t": "h2",
+        "x": "Define an output contract"
+      },
+      {
+        "t": "p",
+        "x": "Ask for JSON with a fixed schema, then validate it. Never trust a model to follow *implied* rules."
+      },
+      {
+        "t": "ul",
+        "items": [
+          "Version prompts in source control",
+          "Keep a golden test set of inputs",
+          "Log inputs and outputs for review"
+        ]
+      },
+      {
+        "t": "h2",
+        "x": "Separate instructions from data"
+      },
+      {
+        "t": "p",
+        "x": "Wrap user content in clear delimiters so the model cannot confuse it with instructions. This also reduces prompt injection risk."
+      },
+      {
+        "t": "blockquote",
+        "x": "A prompt without tests is a guess with extra steps."
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "slug": "typescript-satisfies-operator",
+    "title": "Using the TypeScript satisfies operator",
+    "excerpt": "Type checking without widening. A small operator with big practical value.",
+    "category": "Tutorials",
+    "tags": ["typescript", "code", "types"],
+    "author": "Daniel Ortiz",
+    "date": "2026-10-06",
+    "updated": null,
+    "read": 5,
+    "img": "typescript-satisfies-operator",
+    "caption": "Cover photo via Picsum placeholder",
+    "featured": false,
+    "body": [
+      {
+        "t": "p",
+        "x": "The `satisfies` operator checks a value against a type without changing the inferred type. It is the tool you want when annotations are too blunt."
+      },
+      {
+        "t": "h2",
+        "x": "Before and after"
+      },
+      {
+        "t": "code",
+        "x": "const routes = {\n  home: \"/\",\n  blog: \"/blog\"\n} satisfies Record<string, string>;\n\n// routes.home is still \"\\/\""
+      },
+      {
+        "t": "ul",
+        "items": [
+          "Catches typos in object keys",
+          "Preserves literal types",
+          "Works well with configuration objects"
+        ]
+      },
+      {
+        "t": "p",
+        "x": "See the [TypeScript docs](https://www.typescriptlang.org/docs/) for the full reference."
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "slug": "rag-without-a-vector-database",
+    "title": "RAG without a vector database",
+    "excerpt": "For small corpora, keyword scoring and a simple index beat heavy infrastructure.",
+    "category": "Technology",
+    "tags": ["ai", "rag", "search"],
+    "author": "Priya Nair",
+    "date": "2026-09-30",
+    "updated": null,
+    "read": 8,
+    "img": "rag-without-a-vector-database",
+    "caption": "Cover photo via Picsum placeholder",
+    "featured": false,
+    "body": [
+      {
+        "t": "p",
+        "x": "Retrieval augmented generation does not require a managed vector store. If your corpus is under a few thousand documents, **BM25** plus a reranker works well."
+      },
+      {
+        "t": "h2",
+        "x": "Start simple"
+      },
+      {
+        "t": "ul",
+        "items": [
+          "Chunk documents by heading",
+          "Index with a keyword scorer",
+          "Add embeddings only when recall drops"
+        ]
+      },
+      {
+        "t": "p",
+        "x": "The complexity budget is better spent on **evaluation** than on infrastructure. Measure whether retrieved chunks actually answer the question."
+      },
+      {
+        "t": "blockquote",
+        "x": "Retrieval quality is a data problem before it is an infrastructure problem."
+      }
+    ]
+  },
+  {
+    "id": 13,
+    "slug": "ai-coding-assistants-review",
+    "title": "What AI coding assistants are actually good at",
+    "excerpt": "An honest look at where they help and where they quietly cost you time.",
+    "category": "Technology",
+    "tags": ["ai", "tooling", "code"],
+    "author": "Maya Rahman",
+    "date": "2026-09-22",
+    "updated": "2026-09-24",
+    "read": 7,
+    "img": "ai-coding-assistants-review",
+    "caption": "Cover photo via Picsum placeholder",
+    "featured": false,
+    "body": [
+      {
+        "t": "p",
+        "x": "AI assistants excel at **boilerplate**, test scaffolding and explaining unfamiliar code. They struggle with architecture and long-lived state."
+      },
+      {
+        "t": "h2",
+        "x": "Where they save time"
+      },
+      {
+        "t": "ul",
+        "items": [
+          "Converting between formats and libraries",
+          "Writing repetitive tests",
+          "Summarizing large diffs"
+        ]
+      },
+      {
+        "t": "h2",
+        "x": "Where they cost time"
+      },
+      {
+        "t": "p",
+        "x": "Subtle bugs in generated code can take longer to debug than writing it yourself. Always review *security-sensitive* paths by hand."
+      },
+      {
+        "t": "blockquote",
+        "x": "Treat generated code like a pull request from a fast, confident stranger."
+      }
+    ]
+  },
+  {
+    "id": 14,
+    "slug": "css-container-queries-in-practice",
+    "title": "Container queries in practice",
+    "excerpt": "Component-level responsiveness is finally practical across browsers.",
+    "category": "Tutorials",
+    "tags": ["css", "layout", "responsive"],
+    "author": "Daniel Ortiz",
+    "date": "2026-09-16",
+    "updated": null,
+    "read": 6,
+    "img": "css-container-queries-in-practice",
+    "caption": "Cover photo via Picsum placeholder",
+    "featured": false,
+    "body": [
+      {
+        "t": "p",
+        "x": "Media queries respond to the viewport. Container queries respond to the **parent element**, which is what components actually need."
+      },
+      {
+        "t": "h2",
+        "x": "A card that adapts"
+      },
+      {
+        "t": "code",
+        "x": ".card-wrap { container-type: inline-size; }\n\n@container (min-width: 40rem) {\n  .card { display: grid; grid-template-columns: 1fr 2fr; }\n}"
+      },
+      {
+        "t": "ul",
+        "items": [
+          "Set container-type on the wrapper",
+          "Use @container instead of @media",
+          "Test inside narrow sidebars"
+        ]
+      },
+      {
+        "t": "p",
+        "x": "This removes the need for *layout-specific* modifier classes in most cases."
+      }
+    ]
+  },
+  {
+    "id": 15,
+    "slug": "edge-functions-explained",
+    "title": "Edge functions: when they help and when they do not",
+    "excerpt": "Latency wins are real, but so are the constraints on runtime and data access.",
+    "category": "Technology",
+    "tags": ["edge", "serverless", "performance"],
+    "author": "Priya Nair",
+    "date": "2026-09-05",
+    "updated": null,
+    "read": 6,
+    "img": "edge-functions-explained",
+    "caption": "Cover photo via Picsum placeholder",
+    "featured": false,
+    "body": [
+      {
+        "t": "p",
+        "x": "Edge functions run close to users, cutting round-trip time. But they come with **cold starts**, limited APIs and awkward database access."
+      },
+      {
+        "t": "h2",
+        "x": "Good fits"
+      },
+      {
+        "t": "ul",
+        "items": [
+          "Personalization and A/B routing",
+          "Auth checks before origin requests",
+          "Caching and header rewriting"
+        ]
+      },
+      {
+        "t": "h2",
+        "x": "Poor fits"
+      },
+      {
+        "t": "p",
+        "x": "Long-running jobs and heavy database transactions belong on a *regional* server. Measure before moving logic to the edge."
+      }
+    ]
+  },
+  {
+    "id": 16,
+    "slug": "guardrails-for-ai-features",
+    "title": "Guardrails for shipping AI features",
+    "excerpt": "Input validation, output filtering and a kill switch. The basics nobody skips twice.",
+    "category": "Technology",
+    "tags": ["ai", "security", "product"],
+    "author": "Maya Rahman",
+    "date": "2026-08-28",
+    "updated": "2026-08-29",
+    "read": 8,
+    "img": "guardrails-for-ai-features",
+    "caption": "Cover photo via Picsum placeholder",
+    "featured": false,
+    "body": [
+      {
+        "t": "p",
+        "x": "Any feature that accepts free text and calls a model needs **defense in depth**. The model is not a security boundary."
+      },
+      {
+        "t": "h2",
+        "x": "Three layers"
+      },
+      {
+        "t": "ol",
+        "items": [
+          "Validate and limit input length",
+          "Filter and schema-check output",
+          "Provide a kill switch and rate limits"
+        ]
+      },
+      {
+        "t": "p",
+        "x": "Log enough to investigate incidents, but avoid storing sensitive user content longer than necessary."
+      },
+      {
+        "t": "blockquote",
+        "x": "Assume the model will eventually be tricked. Design for it."
+      }
+    ]
+  },
+  {
+    "id": 17,
+    "slug": "web-components-in-2026",
+    "title": "Web components in 2026: worth the switch?",
+    "excerpt": "Custom elements, shadow DOM and slots have matured. The trade-offs remain.",
+    "category": "Technology",
+    "tags": ["web-components", "javascript", "frontend"],
+    "author": "Daniel Ortiz",
+    "date": "2026-08-15",
+    "updated": null,
+    "read": 7,
+    "img": "web-components-in-2026",
+    "caption": "Cover photo via Picsum placeholder",
+    "featured": false,
+    "body": [
+      {
+        "t": "p",
+        "x": "Web components now work well across frameworks. The question is whether the **encapsulation** is worth the ergonomics you give up."
+      },
+      {
+        "t": "h2",
+        "x": "Strengths"
+      },
+      {
+        "t": "ul",
+        "items": [
+          "Framework-agnostic components",
+          "Strong style encapsulation",
+          "Long-term stability of the platform"
+        ]
+      },
+      {
+        "t": "h2",
+        "x": "Trade-offs"
+      },
+      {
+        "t": "p",
+        "x": "Server-side rendering and form participation still require care. For a *single-framework* app, native components are often premature."
+      }
+    ]
+  },
+  {
+    "id": 18,
+    "slug": "one-click-copy-pattern",
+    "title": "Building a one-click copy button",
+    "excerpt": "A small, accessible copy-to-clipboard pattern with graceful fallbacks.",
+    "category": "Tutorials",
+    "tags": ["javascript", "ux", "clipboard"],
+    "author": "Priya Nair",
+    "date": "2026-10-16",
+    "updated": null,
+    "read": 5,
+    "img": "one-click-copy-pattern",
+    "caption": "Cover photo via Picsum placeholder",
+    "featured": true,
+    "body": [
+      {
+        "t": "p",
+        "x": "A copy button looks trivial until you handle permissions, older browsers and **feedback** for screen readers. Here is a solid pattern."
+      },
+      {
+        "t": "h2",
+        "x": "The core API"
+      },
+      {
+        "t": "code",
+        "x": "async function copyText(text) {\n  try {\n    await navigator.clipboard.writeText(text);\n    return true;\n  } catch (err) {\n    return false;\n  }\n}"
+      },
+      {
+        "t": "h2",
+        "x": "Make it accessible"
+      },
+      {
+        "t": "ul",
+        "items": [
+          "Use a real <button> element",
+          "Announce success with aria-live",
+          "Reset the label after two seconds",
+          "Fall back to a hidden textarea if needed"
+        ]
+      },
+      {
+        "t": "p",
+        "x": "Keep the copied value in a **data attribute** rather than reading rendered text, so formatting never leaks into the clipboard."
+      },
+      {
+        "t": "blockquote",
+        "x": "Good micro-interactions are quiet, confirm quickly and never block the user."
+      }
+    ]
+  }
+]

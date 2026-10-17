@@ -1,0 +1,53 @@
+{
+    "name": "TechSignal",
+    "logo": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 340 80\" width=\"340\" height=\"80\"> <g fill=\"none\" stroke=\"#10B981\" stroke-width=\"5\"> <circle cx=\"42\" cy=\"40\" r=\"26\" opacity=\"0.25\"/> <circle cx=\"42\" cy=\"40\" r=\"17\" opacity=\"0.55\"/> <circle cx=\"42\" cy=\"40\" r=\"8\" opacity=\"1\"/> </g> <text x=\"82\" y=\"52\" font-family=\"Helvetica, Arial, sans-serif\" font-size=\"28\" font-weight=\"800\" letter-spacing=\"1\" fill=\"#0F172A\">TECH</text> <text x=\"180\" y=\"52\" font-family=\"Helvetica, Arial, sans-serif\" font-size=\"28\" font-weight=\"300\" letter-spacing=\"1\" fill=\"#0F172A\">SIGNAL</text> </svg>",
+    "logo-dark": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 340 80\" width=\"340\" height=\"80\"> <g fill=\"none\" stroke=\"#10B981\" stroke-width=\"5\"> <circle cx=\"42\" cy=\"40\" r=\"26\" opacity=\"0.25\"/> <circle cx=\"42\" cy=\"40\" r=\"17\" opacity=\"0.55\"/> <circle cx=\"42\" cy=\"40\" r=\"8\" opacity=\"1\"/> </g> <text x=\"82\" y=\"52\" font-family=\"Helvetica, Arial, sans-serif\" font-size=\"28\" font-weight=\"800\" letter-spacing=\"1\" fill=\"#ffffff\">TECH</text> <text x=\"180\" y=\"52\" font-family=\"Helvetica, Arial, sans-serif\" font-size=\"28\" font-weight=\"300\" letter-spacing=\"1\" fill=\"#ffffff\">SIGNAL</text> </svg>",
+    "tagline": "Calm, thoughtful writing on design, technology and everyday work.",
+    "nav": [
+        {
+            "label": "Home",
+            "href": "index.html"
+        },
+        {
+            "label": "Blog",
+            "href": "blog.html"
+        },
+        {
+            "label": "Contact",
+            "href": "contact.html"
+        }
+    ],
+    "social": [
+        {
+            "label": "GitHub",
+            "href": "https://github.com"
+        },
+        {
+            "label": "LinkedIn",
+            "href": "https://linkedin.com"
+        },
+        {
+            "label": "X",
+            "href": "https://x.com"
+        }
+    ],
+    "contact": {
+        "email": "admin@TechSignal.com",
+        "location": "New York, NY",
+        "hours": "Replies within 2 business days"
+    },
+    "faq": [
+        {
+            "q": "Can I write for TechSignal?",
+            "a": "Yes. Send a short pitch with a draft outline using the contact form."
+        },
+        {
+            "q": "How often do you publish?",
+            "a": "Roughly one new article every week."
+        },
+        {
+            "q": "Can I reuse your content?",
+            "a": "Please ask first. Quote briefly and link back to the original."
+        }
+    ]
+}

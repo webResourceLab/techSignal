@@ -1,0 +1,37 @@
+[
+    {
+        "slug": "technology",
+        "name": "Technology",
+        "desc": "Tools, the web, AI and software craft."
+    },
+    {
+        "slug": "design",
+        "name": "Design",
+        "desc": "Type, layout and interface thinking."
+    },
+    {
+        "slug": "lifestyle",
+        "name": "Lifestyle",
+        "desc": "Habits and routines that last."
+    },
+    {
+        "slug": "business",
+        "name": "Business",
+        "desc": "Small teams, strategy and money."
+    },
+    {
+        "slug": "tutorials",
+        "name": "Tutorials",
+        "desc": "Step-by-step guides."
+    },
+    {
+        "slug": "ai",
+        "name": "AI",
+        "desc": "Models, prompts and applied machine learning."
+    },
+    {
+        "slug": "code",
+        "name": "Code",
+        "desc": "Patterns, snippets and language deep dives."
+    }
+]
